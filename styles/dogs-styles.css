@@ -43,11 +43,14 @@ padding-left: 0;
 width: 20vw;
 height: 20vw;
 margin-top: 2.5vh;
-border: solid 1px black
+border: solid 1px black;
+border-radius: 25%;
+overflow: hidden;
 }
 .thumbnails-image {
     width: 20vw;
     height: 15vw;
+    display: block;
 }
 .thumbnails-title {
     display: block; 
