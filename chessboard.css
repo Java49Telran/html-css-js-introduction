@@ -1,0 +1,56 @@
+:root {
+    --cell-width: 9vw;
+    --cell-height: 9vw;
+
+}
+
+html {
+    height: 100%;
+
+}
+
+body {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.board-row {
+    display: flex;
+    flex-direction: row;
+
+
+
+}
+
+.cell-black {
+    width: var(--cell-width);
+    height: var(--cell-height);
+    background-color: black;
+    border: 1px solid black;
+}
+
+.cell-white {
+    width: var(--cell-width);
+    height: var(--cell-height);
+    background-color: white;
+    border: 1px solid black;
+}
+
+@media(min-width: 560px) {
+    :root {
+        --cell-width: 4vw;
+        --cell-height: 4vw;
+    }
+
+}
