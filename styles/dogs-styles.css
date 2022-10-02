@@ -3,6 +3,7 @@
     src: url("fonts/LAKESHOR-webfont.svg");
     src: url("fonts/LAKESHOR-webfont.woff")
 }
+
 @font-face {
     font-family: airstream;
     src: url("fonts/Airstream-webfont.svg");
@@ -51,8 +52,12 @@ body {
     flex-direction: column;
     align-items: center;
     margin-bottom: 10vh;
-    position: relative;
 
+
+}
+
+.details-frame {
+    position: relative;
 }
 
 .details-image {
@@ -68,8 +73,10 @@ body {
     font-style: italic;
     background-color: beige;
     position: absolute;
-    left: 3vw;
-    bottom: 2vw;
+
+    left: 0;
+    bottom: 2vh;
+
 
 
 }
@@ -111,10 +118,12 @@ body {
 .thumbnails-anchor {
     text-decoration: none;
 }
+
 .thumbnails-item:hover {
-  transform: scale(1.1);
-  margin-left: 1vw;
+    transform: scale(1.1);
+    margin-left: 1vw;
 }
+
 @media(min-width: 560px) {
     :root {
         --thumbnails-img-width: 12vw;
@@ -150,10 +159,7 @@ body {
         align-items: center;
         margin-bottom: 0;
     }
-    .details-title {
-        left: 0;
-        bottom: 4vw;
-    }
+
 
     @media (min-width: 900px) {
         .thumbnails-list {
@@ -171,18 +177,15 @@ body {
             margin-right: 5vw;
         }
 
-        
 
-        .details-title {
-            font-size: 1.5em;
-            bottom: 9vw
-        }
+
+        
 
         .details-image {
             width: 45vw;
             height: 35vw;
         }
-        
+
     }
 
 
