@@ -32,19 +32,22 @@ body {
 
 
 }
-
-.cell-black {
+.cell {
     width: var(--cell-width);
     height: var(--cell-height);
+    
+    border: 1px solid red;  
+}
+.cell.cell-black {
+    
     background-color: black;
-    border: 1px solid black;
+    
 }
 
-.cell-white {
-    width: var(--cell-width);
-    height: var(--cell-height);
+.cell.cell-white {
+    
     background-color: white;
-    border: 1px solid black;
+    
 }
 
 @media(min-width: 560px) {
