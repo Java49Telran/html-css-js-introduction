@@ -46,6 +46,12 @@ body {
     justify-content: center;
     flex-grow: 1;
 }
+.main-class.hidden {
+    --thumbnails-img-width: 35vw;
+    --thumbnails-img-height: 25vw;
+    --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.33) 
+}
+
 
 .details-container {
     display: flex;
@@ -55,9 +61,17 @@ body {
 
 
 }
+.hidden .details-container {
+    display: none;
+}
 
 .details-frame {
     position: relative;
+}
+.hide-button {
+    position: absolute;
+    top: 3vh;
+    right: 3vw;
 }
 
 .details-image {
@@ -91,6 +105,10 @@ body {
     justify-content: space-around;
     padding-left: 0;
 
+}
+.hidden .thumbnails-list {
+    max-height: 80vh;
+    margin-bottom: 10vh;
 }
 
 .thumbnails-item {
