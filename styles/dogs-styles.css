@@ -160,11 +160,22 @@ body {
         order: -1;
         justify-content: flex-start;
     }
+    .hidden .thumbnails-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: flex-start;
+    }
 
     .main-class {
         flex-direction: row;
         justify-content: space-around;
 
+    }
+    .hidden.main-class {
+        --thumbnails-img-width: 18vw;
+        --thumbnails-img-height: 12vw;
+        --thumbnails-title-height: calc(var(--thumbnails-img-height)* 0.25)
     }
 
     .details-image {
