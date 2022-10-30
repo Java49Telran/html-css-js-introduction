@@ -22,9 +22,15 @@
 // let res = sum(op1, op2);
 // console.log(res)
 function sumDigits(number) {
-    //TODO
-    //function should return sum of a given number digits
+    number = Math.abs(number)
+    let res = 0;
+    do{
+        let num=number%10;
+        res = res + num;
+        number = Math.trunc(number / 10);
+    }while (number != 0);
+    return res; 
 }
 //Example
-console.log(sumDigits(123)); //should be printed out 6
+console.log(sumDigits(623)); //should be printed out 6
 
