@@ -21,16 +21,23 @@
 // let op2 = 20;
 // let res = sum(op1, op2);
 // console.log(res)
+/************************************************** */
+//HW #11
 function sumDigits(number) {
-    number = Math.abs(number)
-    let res = 0;
-    do{
-        let num=number%10;
-        res = res + num;
-        number = Math.trunc(number / 10);
-    }while (number != 0);
-    return res; 
+    //compute sum of digits for the integer numbers
+   number = Math.abs(number);
+   let sum = 0;
+   number = Math.trunc(number); //get rid of the fractional part
+   do {
+        let digit = number % 10;
+        number = (number - digit) / 10;
+        sum += digit;
+   }while(number != 0);
+  return sum;
+
 }
 //Example
-console.log(sumDigits(623)); //should be printed out 6
+let sum = sumDigits(123)
+console.log(sum); //should be printed out 6
+
 
