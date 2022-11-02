@@ -89,19 +89,54 @@
 //     return res;
 // }
 // console.log(fromNumberToMorse(333651));
+function getSymbol(digit) {
+    let codeA = 'a'.charCodeAt();
+    if (digit > 9) {
+        digit = String.fromCharCode(codeA + digit - 10);
+    }
+      
+   return digit;
+    //31 - 10 + 97
+}
 function fromNumberToString(number, base) {
-    //TODO
+    number = Math.abs(number);
+    let res = "";
+    do {
+        let digit = number % base;
+        let sym = getSymbol(digit);
+        res = sym + res;
+        number = Math.trunc(number / base);
+
+    } while(number != 0);
+    return res;
 
 }
+function getDigit(symbol) {
+    let codeA = 'a'.charCodeAt();
+    let res = symbol < '9' ? +symbol : symbol.charCodeAt() - codeA + 10;
+    return res;
+}
 function fromStringToNumber(string, base) {
-    //TODO
+ 
+    string = string.toLowerCase();
+    let result = 0;
+    for (let i = 0; i < string.length; i++) {
+        let digit = getDigit(string[i]);
+        result = result * base + digit;
+    }
+    return result;
 }
 
 //getting code from symbol 
-console.log('abc'.charCodeAt(2))
+//console.log('abc'.charCodeAt(2))
 
 //getting symbol from code
-console.log(String.fromCharCode(126))
+//console.log(String.fromCharCode(126))
+
+console.log(fromNumberToString(900550,36))
+console.log(fromStringToNumber("123", 10));
+console.log(fromStringToNumber("10", 16));
+
 
 
 
