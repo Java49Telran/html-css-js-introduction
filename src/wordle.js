@@ -6,11 +6,13 @@ const letterElements = document.querySelectorAll(".letter-guess");
 const trialsElement = document.querySelector(".guess-trials");
 const gameOverElement = document.querySelector(".game-over-message");
 const playAgainElement = document.getElementById("play-again");
+let flGameOver = false;
 const INITIAL_TRIALS = 6;
 let trials = INITIAL_TRIALS;
 function showTrialsMessage(trials) {
     
-        trialsElement.innerHTML = `remained ${trials} guess trials`;
+        trialsElement.innerHTML = 
+        `remained ${trials} guess trials`;
     
    
 }
@@ -21,24 +23,29 @@ function startGame() {
     showTrialsMessage(trials);
     gameOverElement.innerHTML ='';
     playAgainElement.style.display='none';
-    letterElements.forEach(e => e.innerHTML='')
+    letterElements.forEach(e => e.innerHTML='');
+    flGameOver = false;
 }
 function onChange(event) {
     const wordGuess = event.target.value;
+    
+    if (flGameOver) {
+        alert("game is over");
+        return;
+    }
     trials--;
     showTrialsMessage(trials);
-    
-    event.target.value='';
+     
     if (wordGuess.length != N_LETTERS) {
         alert(`A word should contain ${N_LETTERS} letters`)
     } else {
         const wordAr = Array.from(wordGuess);
-        wordAr.forEach((l, i) => letterElements[i].innerHTML = l)
-        const colors = wordAr.map((l, i) => {
-            let index = word.indexOf(l);
+        wordAr.forEach((l, i) => letterElements[i].innerHTML = l);
+        const colors = wordAr.map((letter, i) => {
+            let index = word.indexOf(letter);
             let res = 'red';
             if (index  > -1) {
-                res = l == word[i] ? 'green' : 'yellow'
+                res = letter == word[i] ? 'green' : 'yellow'
             }
             return res;
         })
@@ -61,6 +68,7 @@ function endGame(isSuccess) {
     }
    
    playAgainElement.style.display='block';
-   trialsElement.innerHTML = ''
+   trialsElement.innerHTML = '';
+   flGameOver = true;
 }
 startGame()
