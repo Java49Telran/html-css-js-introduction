@@ -31,7 +31,7 @@ function startGame() {
     sectionElement.innerHTML = getLetterDivs();
     lettersElements = document.querySelectorAll(".letter-guess");
     word = word.toLowerCase();
-    playAgainElement.style.display = 'none';
+    playAgainElement.hidden = true;
     overGameMessageElement.innerHTML = '';
     guessMessageElement.innerHTML = '';
 
@@ -60,7 +60,7 @@ function onWordTyped() {
 }
 function endGame() {
     overGameMessageElement.innerHTML = `you have used ${trials} guess trials`;
-    playAgainElement.style.display = "block";
+    playAgainElement.hidden = false;
     inputElement.disabled = true;
 }
 /************************************************ */

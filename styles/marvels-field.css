@@ -15,3 +15,6 @@ body {
     width: 3.5vw;
     text-align: center;
 }
+#question {
+    font-size: 2em;
+}
