@@ -1,10 +1,10 @@
 //Configuration
 const words = ["Messi", "Germany", "France",
     "unknown", "Israel"]
-const questions = ["best player on Mondeal 2014",
-    "country champion in mondeal 2014", "country champion in mondeal 2018",
-    "country champion in mondeal 2022",
-    "country that does not participate in Mondeal 2022"];
+const questions = ["best player on Mondial 2014",
+    "country champion in mondial 2014", "country champion in mondial 2018",
+    "country champion in mondial 2022",
+    "country that does not participate in Mondial 2022"];
 /******************************************* */
 //DOM elements
 const sectionElement = document.querySelector(".word-guess")
