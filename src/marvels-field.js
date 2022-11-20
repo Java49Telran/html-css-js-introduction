@@ -25,6 +25,7 @@ function startGame() {
     inputElement.value = '';
     inputElement.disabled = false;
     const index = getIndex();
+    previousIndex = index;
     questionElement.innerHTML = questions[index];
     word = words[index];
     sectionElement.innerHTML = getLetterDivs();
