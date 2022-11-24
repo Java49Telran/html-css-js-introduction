@@ -1,39 +1,17 @@
-function isAnagram(str1, str2) {
-    let res = false;
-    if (str1.length == str2.length) {
-        const str1Occurrences = getSymbolOccurrences(str1);
-        res = checkAnagram(str1Occurrences, str2);
-    }
-    return res;
-
+function createEmployee(id, name, birthYear, salary) {
+    return {id, name, birthYear, salary};
 }
-function symbolProcessing(res, cur) {
-    if (res[cur]) {
-        res[cur]++;
-    } else {
-        res[cur] = 1;
-    }
-    return res;
+const empl1 = createEmployee(123, "Vasya", 2000, 10000);
+const empl2 = empl1;
+console.log(empl1==empl2);
+function updateSalary(empl1, newSalary) {
+    empl1 = createEmployee(123, "Vasya", 2000, newSalary)
 }
-function getSymbolOccurrences(string) {
-    const stringArray = Array.from(string);
-    return stringArray.reduce(symbolProcessing
-        , {});
+updateSalary(empl1, 15000);
+console.log(empl1);
+function updateSalaryPrimitive(salary, newSalary) {
+    salary = newSalary;
 }
-
-function checkAnagram(occurrences, string) {
-    const stringArray = Array.from(string);
-   
-    return stringArray.every(symbol => {
-        let res = false;
-        if (occurrences[symbol]) {
-            res = true;
-            occurrences[symbol]--
-        }
-        return res;
-
-    })
-
-}
-isAnagram("yellow","oolley")
-
+let salary = 10000;
+updateSalaryPrimitive(salary, 20000);
+console.log("salary", salary);
