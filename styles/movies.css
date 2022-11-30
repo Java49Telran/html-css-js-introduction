@@ -8,6 +8,7 @@
     overflow-y: scroll;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 .movie-item {
     
@@ -42,6 +43,10 @@
 .movie-image {
     width: 60vh;
     height: 80vh
+}
+.active {
+    background-color: blue;
+    color: white;
 }
 body {
     background-color: azure;
