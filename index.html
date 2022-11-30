@@ -5,27 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies</title>
+    <link rel="stylesheet" href="styles/movies.css">
 </head>
 <body>
-    <button onclick="show(0)">show section 1</button>
-    <button onclick="show(1)">show section 2</button>
-    <button onclick="show(2)">show section 3</button>
-    <section hidden>
+    <div class="buttons">
+        <button onclick="show(0)">show all movies</button>
+        <button onclick="show(1)">most popular movie</button>
+        <button onclick="show(2)">least popular movie</button>
+    </div>
+    <section hidden >
         <ul class="movies-list">
-
         </ul>
-
     </section>
-    <section hidden>
-        <label>Kukureku</label>
-
-    </section>
-    <section hidden>
-        <label>section 3</label>
-
-    </section>
+    <section hidden >
+        <div class="movie-item" id="movie-most">
+        </div>
+    </section> 
+    <section hidden >
+        <div class="movie-item" id="movie-least"> 
+        </div>
+    </section> 
    
-    
     <script src="src/movies.js"></script>
 </body>
 </html>
