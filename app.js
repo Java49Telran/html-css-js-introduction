@@ -19,24 +19,60 @@
         
 //         return this.width * this.height;
 //     },
-//     perimeter: () => {
+//     perimeter: function() {
 //         return this.width * 2 + this.height * 2;
 //     },
 //     display: function() {
 //         console.log(`square is ${this.square()}; perimeter is ${this.perimeter()}`)
 //     }
 // }
-function Rectangle(width, height) {
-    this.width = width;
-    this.height = height;
+function createRectangle(width, height) {
+    return {
+            width,
+            height:height,
+            square: function() {
+                
+                return this.width * this.height;
+            },
+            perimeter: function() {
+                return this.width * 2 + this.height * 2;
+            },
+            display: function() {
+                console.log(`square is ${this.square()}; perimeter is ${this.perimeter()}`)
+            }
+        }
 }
-Rectangle.prototype.square = function() {
-    return this.width * this.height;
+class Rectangle {
+    constructor(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    square() {
+        return this.width * this.height;
+    }
+    perimeter() {
+        return this.width * 2 + this.height * 2;
+    }
 }
-Rectangle.prototype.perimeter = function() {
-    return this.width * 2 + this.height * 2;
-}
-const rectangle = new Rectangle(3, 5);
-console.log(rectangle.square());
-console.log(rectangle.perimeter());
+const rectangles1 = [new Rectangle(3, 5),
+new Rectangle(10, 20)];
+const rectangles2 = [createRectangle(3, 5), createRectangle(10, 20)]
+console.log(rectangles2[0].square());
+console.log(rectangles2[1].perimeter());
 //rectangle.display();
+const ar = [1, 2, 3];
+Array.prototype.mymap = function(fun) {
+    console.log("This is my map method, congratulations");
+    const res = [];
+    for(let i = 0; i < this.length; i++) 
+    return this.map(fun)
+}
+console.log(ar.mymap(e => e * 2));
+Object.prototype.toString = function() {
+    return "kuku";
+}
+Array.prototype.toString = function() {
+    return "kukureku";
+}
+console.log(`${rectangles1[0]}`)
+console.log(`${ar}`)
