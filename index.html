@@ -10,43 +10,71 @@
 </head>
 
 <body>
-    <header class="form-title">
-        Employee Form
-    </header>
-    <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
-        <div class="two-inputs">
-            <input type="text" name="employee_name" required placeholder="Enter employee name">
-            <input type="email" name="email" placeholder="Enter email" required>
-        </div>
-        <div class="date-label">
-            <label >Enter birthdate</label>
-            <input type="date"  name="birthDate"  required onchange="onChange(event)">
-            
-        </div>
-        <p id="date_error" class="error"></p>
-        <div class="two-inputs">
-            <select name="department" required>
-                <option value hidden selected disabled>
-                    --Select Department--
-                </option>
-                <option value="QA">QA</option>
-                <option value="Development">Development</option>
-                <option value="Management">Management</option>
-                <option value="Audit">Audit</option>
-            </select>
-            <input type="number" name="salary" placeholder="Enter salary"
-             onchange="onChange(event)" required>
-             
-        </div>
-        <p id="salary_error" class="error"></p> 
-        <div class="buttons">
-            <button type="submit">Submit</button>
-            <button type="reset">Reset</button>
-        </div>
+    <div class="buttons-menu">
+        <button onclick="showSection(0)" class="btn-menu">Add Employee</button>
+        <button onclick="showSection(1)" class="btn-menu">Show All Employees</button>
+        <button onclick="showSection(2)" class="btn-menu">Show Employees by Salary</button>
+    </div>
+    <section id="add-employee" hidden>
+        <header class="form-title">
+            Employee Form
+        </header>
+        <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
+            <div class="two-inputs">
+                <input type="text" name="employee_name" required placeholder="Enter employee name">
+                <input type="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="date-label">
+                <label>Enter birthdate</label>
+                <input type="date" name="birthDate" required onchange="onChange(event)">
+
+            </div>
+            <p id="date_error" class="error"></p>
+            <div class="two-inputs">
+                <select name="department" required>
+                    <option value hidden selected disabled>
+                        --Select Department--
+                    </option>
+                    <option value="QA">QA</option>
+                    <option value="Development">Development</option>
+                    <option value="Management">Management</option>
+                    <option value="Audit">Audit</option>
+                </select>
+                <input type="number" name="salary" placeholder="Enter salary" onchange="onChange(event)" required>
+
+            </div>
+            <p id="salary_error" class="error"></p>
+            <div class="buttons">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
 
 
 
-    </form>
+        </form>
+    </section>
+    <section id="show-all-employees" hidden>
+        <ul class="employees-list" id="employees-all">
+
+        </ul>
+    </section>
+    <section id="show-employees-salary" hidden>
+        <form id="salary-form" class="form-class" onsubmit="onSubmitSalary(event)">
+            <div class="two-inputs">
+                <input type="number" name="salaryFrom" placeholder="Enter salary 'From'" onchange="onChangeSalaryFrom(event)" required>
+                <input type="number" name="salaryTo" placeholder="Enter salary 'To'" onchange="onChangeSalaryTo(event)" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Search</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p id="salary_form_error" class="error center"></p>
+        <ul class="employees-list" id="employees-salary">
+
+        </ul>
+    </section>
+    
     <script src="src/form.js"></script>
 </body>
 

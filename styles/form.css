@@ -1,6 +1,9 @@
 body, html {
     height: 100%;
 }
+body {
+    background-color: aliceblue;
+}
 .form-title {
     text-align: center;
     font-size: 1.5em;
@@ -37,6 +40,47 @@ body, html {
 .error {
     border-color: red;
     color: red;
+}
+.active {
+    background-color: blue;
+    color: white;
+}
+.employees-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 70vh;
+    list-style: none;
+    overflow-y: scroll;
+    justify-content: space-around;
+}
+.employees-item {
+    max-width: 30vw;
+    background-color: blue;
+    border-radius: 25%;
+    text-align: center;
+    border: 2px solid blue;
+    margin-top: 10vh;
+    overflow: hidden;
+}
+.employees-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.employees-item-paragraph {
+    background-color: white;
+    font-weight: bold;
+}
+.buttons-menu {
+    display: flex;
+    justify-content: center;
+}
+.btn-menu+.btn-menu {
+    margin-left: 10vw;
+}
+.center {
+    text-align: center;
 }
 
 
