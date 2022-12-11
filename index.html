@@ -19,14 +19,14 @@
         <header class="form-title">
             Employee Form
         </header>
-        <form id="employee_form" onsubmit="onSubmit(event)" class="form-class">
+        <form id="employee_form"  class="form-class">
             <div class="two-inputs">
                 <input type="text" name="employee_name" required placeholder="Enter employee name">
                 <input type="email" name="email" placeholder="Enter email" required>
             </div>
             <div class="date-label">
                 <label>Enter birthdate</label>
-                <input type="date" name="birthDate" required onchange="onChange(event)">
+                <input type="date" name="birthDate" required id="date_input">
 
             </div>
             <p id="date_error" class="error"></p>
@@ -40,7 +40,7 @@
                     <option value="Management">Management</option>
                     <option value="Audit">Audit</option>
                 </select>
-                <input type="number" name="salary" placeholder="Enter salary" onchange="onChange(event)" required>
+                <input type="number" name="salary" placeholder="Enter salary" id="salary_input" required>
 
             </div>
             <p id="salary_error" class="error"></p>
