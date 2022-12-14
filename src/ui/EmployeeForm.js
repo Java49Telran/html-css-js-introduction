@@ -24,18 +24,8 @@ export class EmployeeForm {
         this.onChange();
     }
     addSubmitHandler(processEmployeeFun) {
-        this.#formElement.addEventListener("submit", (event) => {
-            event.preventDefault();
-            console.log("submitted");
-            const employee = Array.from(this.#inputElements).reduce(
-                (res, cur) => {
-                    res[cur.name] = cur.value;
-                    return res;
-                }, {}
-            )
-            console.log(employee)
-            processEmployeeFun(employee);
-        })
+        this.#formElement.addEventListener("submit",
+         this.handler.bind(this, processEmployeeFun))
     }
     onChange() {
         this.#dateInputElement.addEventListener("change", (event) => {
@@ -64,6 +54,18 @@ export class EmployeeForm {
     
         }
     
+    }
+   handler(processEmployeeFun, event ) {
+        event.preventDefault();
+        console.log("submitted");
+        const employee = Array.from(this.#inputElements).reduce(
+            (res, cur) => {
+                res[cur.name] = cur.value;
+                return res;
+            }, {}
+        )
+        console.log(employee);
+        processEmployeeFun(employee);
     }
     
 
